@@ -1,7 +1,5 @@
-# Build Stage
-FROM debian:10 AS build
-
-RUN apt-get update && apt-get -y install maven
+# Build Stage - Using a combined Maven/Java image to avoid OS repo issues
+FROM maven:3.8.6-openjdk-8 AS build
 
 WORKDIR /opt/shipping
 
